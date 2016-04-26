@@ -5,8 +5,9 @@ double minVoltage = 1023/5 * LOWVOLTAGE;
 
 
 void setup() {
-  pinMode(2, INPUT);
-  pinMode(1, OUTPUT);
+  pinMode(0, OUTPUT); //LED on Model B
+  pinMode(1, OUTPUT); //LED on Model A or Pro
+  pinMode(2, INPUT); //Voltage input
   delay(2000);
 }
 
@@ -33,8 +34,10 @@ void loop() {
 void buzz(int count, int count2){
    for(int i=0;i<count;i++){
     for(int k=0;k<count2;k++){
+      digitalWrite(0,HIGH)
       digitalWrite(1,HIGH);
       delay(500);
+      digitalWrite(0,LOW)
       digitalWrite(1,LOW);
       delay(200);
     }
